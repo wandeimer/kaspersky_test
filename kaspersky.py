@@ -2,12 +2,11 @@ import requests
 from bs4 import BeautifulSoup as bs
 import sqlite3
 
-def hh_parse(products):
+def parse(products):
     max_id = []
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'}
-    base_url = 'https://vladivostok.hh.ru/search/vacancy?area=22&st=searchVacancy&text=java&page=0'
     kaspersky_url = 'https://threats.kaspersky.com/en/vulnerability/'
     form_data = {
         'action': 'infinite_scroll',
@@ -135,7 +134,7 @@ def CreateDB():
 
 
 Products = 'Mozilla Thunderbird'
-hh_parse(Products)
+parse(Products)
 
 # CreateDB()
 
